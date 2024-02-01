@@ -1,40 +1,85 @@
-import { FaFacebook, FaInstagram, FaTelegram, FaTwitter, FaArrowRight } from "react-icons/fa";
+import {
+	FaFacebook,
+	FaInstagram,
+	FaTelegram,
+	FaTwitter,
+	FaArrowRight,
+} from "react-icons/fa";
 import { MdEventNote } from "react-icons/md";
 import { ImTree } from "react-icons/im";
 import { LiaHourglassHalfSolid } from "react-icons/lia";
 import { RiAuctionFill } from "react-icons/ri";
 
 function Services() {
-    const services = [
+	const services = [
 		{
 			title: "Tracking proprty",
 			icons: <MdEventNote />,
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		},
 		{
 			title: "Auction and bidding",
 			icons: <RiAuctionFill />,
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		},
 		{
 			title: "Managing property",
 			icons: <ImTree />,
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		},
 		{
 			title: "Simplifying work",
 			icons: <LiaHourglassHalfSolid />,
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		},
 	];
+	const explore = [
+		{
+			title: "Property management",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris",
+		},
+		{
+			title: "Placing auction",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris",
+		},
+		{
+			title: "Register bidders",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris",
+		},
+		{
+			title: "Tracking companies property",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+		},
+		{
+			title: "Managing request",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+		},
+		{
+			title: "Managing employee",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utnim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+		},
+	];
+
 	return (
 		<div className='service'>
 			<h3 className='title'>Services provided for a company </h3>
+			<h4> Explore services</h4>
 			<div className='part-two'>
+				{explore.map((item) => (
+					<div className='cols'>
+						<h2> {item.title} </h2>
+						<p> {item.desc} </p>
+						<div class='icon-wrapper'>
+							<span><LiaHourglassHalfSolid /></span>
+						</div>
+					</div>
+				))}
+			</div>
+			<div className='part-three'>
 				<div className='title'>
-					<h4>
+					<h5>
 						Revolutionary solutions <h3> For companies </h3>
-					</h4>
+					</h5>
 					<span>
 						All in one place
 						<FaArrowRight style={{ marginLeft: "20px", color: "grey" }} />
@@ -44,13 +89,13 @@ function Services() {
 					{services.map((item) => (
 						<div className='mapped'>
 							<h2> {item.title} </h2>
-							<p> {item.desc} </p>                            
+							<p> {item.desc} </p>
 							<span> {item.icons} </span>
 						</div>
 					))}
 				</div>
 			</div>
-			<div className='part-three'>
+			<div className='part-four'>
 				<h2 className='dynamic-process'>Is your company facing problmes?</h2>
 				<div className='process-details'>
 					<div className='column1'>

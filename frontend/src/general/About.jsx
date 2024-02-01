@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
 
 function About() {
 	return (
-		<div className='about'>
+		<div className='about-page'>
 			<h3 className='title'>About chain of trust</h3>
 			<div className='goal'>
 				<h2> Our Goal </h2>

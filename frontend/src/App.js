@@ -1,9 +1,16 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Home from "./Home";
-import NavBar from "./Navbar";
-import About from "./About";
-import Services from "./Services";
+import Home from "./general/Home";
+import NavBar from "./general/Navbar";
+import About from "./general/About";
+import Services from "./general/Services";
+import Signin from "./general/Signin";
+import Signup from "./general/Signup";
+import Welcome from "./customizations/Welcome";
+import CustomizeDep from "./customizations/CustomizeDep";
+import CustomizeCateg from "./customizations/CustomizeCateg";
+import GenerateReport from "./admin_related/GenerateReport";
+import Admin from "./admin_related/Admin";
 
 function App() {
 	return (
@@ -22,6 +29,27 @@ function App() {
 						<Route exact path='/service'>
 							<NavBar />
 							<Services/>
+						</Route>
+						<Route exact path='/signin'>
+							<Signin />
+						</Route>
+						<Route exact path='/signup'>
+							<Signup />
+						</Route>
+						<Route exact path='/welcome'>
+							<Welcome />
+						</Route>
+						<Route exact path='/customdep'>
+							<CustomizeDep/>
+						</Route>
+						<Route exact path='/customcateg'>
+							<CustomizeCateg />
+						</Route>
+						<Route exact path='/report'>
+							<GenerateReport />
+						</Route>
+						<Route exact path='/admin'>
+							<Admin />
 						</Route>
 					</Switch>
 				</div>

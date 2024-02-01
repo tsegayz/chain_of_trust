@@ -73,10 +73,12 @@ function Home() {
 						textinc Lorem Ipsum simply dummy text of the printing and type
 						setting industry. Lorem been industry's standard dummy textinc
 					</p>
-					<button>
-						<p>More about us</p>
-						<FaArrowCircleRight style={{ fontSize: "50px" }} />
-					</button>
+					<a href='/admin'>
+						<button>
+							<p>More about us</p>
+							<FaArrowCircleRight style={{ fontSize: "50px" }} />
+						</button>
+					</a>
 				</div>
 				<div className='part2'>
 					<div className='column1'>

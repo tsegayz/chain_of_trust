@@ -93,11 +93,11 @@ function NavBar() {
 							)}
 						</div>
 					) : (
-						<li className="login">
-							<a href='/login'>
-								<span> Login </span>
+						
+						<span className="signin">
+							<a href='/signin'> Login
 							</a>
-						</li>
+						</span>
 					)}
 				</ul>
 			</div>
