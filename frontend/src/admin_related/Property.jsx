@@ -1,4 +1,4 @@
-import { FaTv } from "react-icons/fa";
+import { FaTv, FaUpload } from "react-icons/fa";
 import { MdSearch, MdPeople, MdSettings, MdAdd } from "react-icons/md";
 import {
 	PiGitPullRequest,
@@ -6,8 +6,11 @@ import {
 	PiSquaresFourBold,
 	PiTree,
 } from "react-icons/pi";
-import { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
+
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
 function Property() {
 	const sidebar = [
@@ -34,16 +37,31 @@ function Property() {
 		{
 			title: "Departements",
 			icons: <PiTree />,
-			link: "/Dep",
+			link: "/dep",
 		},
 		{
 			title: "Category",
 			icons: <PiSquaresFourBold />,
-			link: "/Category",
+			link: "/category",
 		},
 	];
-	const [selectedItem, setSelectedItem] = useState(null);
+	const [selectedItem, setSelectedItem] = useState(2);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
+	const fileInputRef = useRef(null);
+
+	const options = ["Option 1", "Option 2", "Option 3"];
+	const [selectedOption, setSelectedOption] = useState("");
+	const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+	const handleFileChange = (event) => {
+		const selectedFile = event.target.files[0];
+	};
+
+	const handleOptionClick = (option) => {
+		setSelectedOption(option);
+		setDropdownOpen(false);
+	};
 	return (
 		<div className='property'>
 			<div className='side-bar'>
@@ -80,12 +98,144 @@ function Property() {
 				</div>
 				<div className='body'>
 					<seciton className='one'>
-						<h3> All </h3>
-						<Link to='/addPpty'>
-							<button>
+						<a href='/propertyDet'> All </a>
+						<div>
+							<button onClick={() => setIsModalOpen(true)}>
 								<MdAdd style={{ color: "white" }} />
 							</button>
-						</Link>
+							{isModalOpen && (
+								<div className='modal-overlay'>
+									<Modal
+										isOpen={isModalOpen}
+										onRequestClose={() => setIsModalOpen(false)}
+										className='modal-content custom-property'
+										overlayClassName='modal-overlay'
+									>
+										<h2> Register Property </h2>
+										<div className='inputs'>
+											<h4>Property ID</h4>
+											<input placeholder='Enter ID' />
+											<h4>Property Name</h4>
+											<input placeholder='Enter Property Name' />
+											<div className='row'>
+												<div className='col'>
+													<div className='input-container'>
+														<p> Attach File: </p>
+														<div className='cont'>
+															<input
+																type='file'
+																onChange={handleFileChange}
+																style={{ display: "none" }}
+																ref={fileInputRef}
+															/>
+															<div
+																style={{
+																	display: "flex",
+																	alignItems: "center",
+																}}
+															>
+																<FaUpload style={{ marginRight: "5px" }} />
+																<input
+																	type='text'
+																	placeholder='Choose File'
+																	onClick={() => fileInputRef.current.click()}
+																	readOnly
+																/>
+															</div>
+														</div>
+													</div>
+													<div className='input-container'>
+														<p> Attach Image: </p>
+														<div className='cont'>
+															<input
+																type='file'
+																onChange={handleFileChange}
+																style={{ display: "none" }}
+																ref={fileInputRef}
+															/>
+															<div
+																style={{
+																	display: "flex",
+																	alignItems: "center",
+																}}
+															>
+																<FaUpload style={{ marginRight: "5px" }} />
+																<input
+																	type='text'
+																	placeholder='Choose File'
+																	onClick={() => fileInputRef.current.click()}
+																	readOnly
+																/>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													className='input-container'
+													style={{
+														width: "12em",
+														marginLeft: "30px",
+														backgroundColor: "white",
+														padding: "0px 10px",
+														borderRadius: "8px",
+														boxShadow: " 0px 2px 4px rgba(0, 0, 0, 0.322)",
+													}}
+												>
+													<input
+														type='text'
+														placeholder='Select category'
+														value={selectedOption}
+														readOnly
+														onClick={() => setDropdownOpen(!isDropdownOpen)}
+													/>
+													<div
+														className='dropdown-arrow'
+														onClick={() => setDropdownOpen(!isDropdownOpen)}
+													>
+														<IoIosArrowDown />
+													</div>
+													{isDropdownOpen && (
+														<ul className='options-list'>
+															{options.map((option) => (
+																<li
+																	key={option}
+																	onClick={() => handleOptionClick(option)}
+																>
+																	{option}
+																</li>
+															))}
+														</ul>
+													)}
+												</div>
+											</div>
+											<div className='buttons'>
+												<button
+													onClick={() => setIsModalOpen(false)}
+													style={{
+														color: "white",
+														backgroundColor: "black",
+														marginRight: "16em",
+													}}
+												>
+													Cancel
+												</button>
+												<Link to='/property'>
+													<button
+														style={{
+															color: "black",
+															backgroundColor: "white",
+															marginRight: "16em",
+														}}
+													>
+														Save
+													</button>
+												</Link>
+											</div>
+										</div>
+									</Modal>
+								</div>
+							)}
+						</div>
 					</seciton>
 					<section className='two'>
 						<ul>

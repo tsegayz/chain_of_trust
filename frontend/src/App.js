@@ -13,7 +13,12 @@ import GenerateReport from "./admin_related/GenerateReport";
 import Admin from "./admin_related/Admin";
 import Property from "./admin_related/Property";
 import Staff from "./admin_related/Staff";
-import RegProperty from "./admin_related/RegProperty";
+import PropertyDetail from "./admin_related/PropertyDetail";
+import StaffDetail from "./admin_related/StaffDetail";
+import Request from "./admin_related/Request";
+import RequestDetail from "./admin_related/RequestDetail";
+import Department from "./admin_related/Department";
+import Catagory from "./admin_related/Catagory";
 
 function App() {
 	return (
@@ -57,11 +62,26 @@ function App() {
 						<Route exact path='/property'>
 							<Property/>
 						</Route>
-						<Route exact path='/property'>
+						<Route exact path='/propertyDet'>
+							<PropertyDetail/>
+						</Route>
+						<Route exact path='/staff'>
 							<Staff/>
 						</Route>
-						<Route exact path='/addPpty'>
-							<RegProperty/>
+						<Route exact path='/staffDet'>
+							<StaffDetail/>
+						</Route>
+						<Route exact path='/request'>
+							<Request/>
+						</Route>
+						<Route exact path='/requestDet'>
+							<RequestDetail/>
+						</Route>		
+						<Route exact path='/dep'>
+							<Department/>
+						</Route>	
+						<Route exact path='/category'>
+							<Catagory/>
 						</Route>
 					</Switch>
 				</div>
