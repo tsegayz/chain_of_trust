@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function CustomizeDep() {
 	return (
@@ -21,7 +22,7 @@ function CustomizeDep() {
 					</button>
 					<button>Save</button>
 				</div>
-				<a href='/customcateg'> Next </a>
+				<Link href='/customcateg'> Next </Link>
 			</div>
 		</div>
 	);

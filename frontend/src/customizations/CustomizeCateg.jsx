@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function CustomizeCateg() {
 	return (
@@ -8,7 +9,7 @@ function CustomizeCateg() {
 				<h4>Category</h4>
 				<input placeholder='Enter the category' />
 				<h4>Description</h4>
-				<input placeholder='Enter thte Description' />
+				<input placeholder='Enter the Description' />
 				<div className='buttons'>
 					<button
 						style={{
@@ -22,7 +23,7 @@ function CustomizeCateg() {
 
 					<button>Save</button>
 				</div>
-				<a href='/dashboard'> Next </a>
+				<Link href='/dashboard'> Next </Link>
 			</div>
 		</div>
 	);

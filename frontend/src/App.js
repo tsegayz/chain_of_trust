@@ -11,6 +11,9 @@ import CustomizeDep from "./customizations/CustomizeDep";
 import CustomizeCateg from "./customizations/CustomizeCateg";
 import GenerateReport from "./admin_related/GenerateReport";
 import Admin from "./admin_related/Admin";
+import Property from "./admin_related/Property";
+import Staff from "./admin_related/Staff";
+import RegProperty from "./admin_related/RegProperty";
 
 function App() {
 	return (
@@ -50,6 +53,15 @@ function App() {
 						</Route>
 						<Route exact path='/admin'>
 							<Admin />
+						</Route>
+						<Route exact path='/property'>
+							<Property/>
+						</Route>
+						<Route exact path='/property'>
+							<Staff/>
+						</Route>
+						<Route exact path='/addPpty'>
+							<RegProperty/>
 						</Route>
 					</Switch>
 				</div>
