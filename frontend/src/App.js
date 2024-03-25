@@ -19,6 +19,7 @@ import Request from "./admin_related/Request";
 import RequestDetail from "./admin_related/RequestDetail";
 import Department from "./admin_related/Department";
 import Catagory from "./admin_related/Catagory";
+import HrDashboard from "./hr_related/HrDashboard";
 
 function App() {
 	return (
@@ -57,7 +58,7 @@ function App() {
 							<GenerateReport />
 						</Route>
 						<Route exact path='/admin'>
-							<Admin />
+							<Admin/>
 						</Route>
 						<Route exact path='/property'>
 							<Property/>
@@ -82,6 +83,9 @@ function App() {
 						</Route>	
 						<Route exact path='/category'>
 							<Catagory/>
+						</Route>
+						<Route exact path='/hrDashboard'>
+							<HrDashboard/>
 						</Route>
 					</Switch>
 				</div>

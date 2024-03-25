@@ -1,16 +1,13 @@
-import { FaBug, FaTv } from "react-icons/fa";
-import { IoAnalytics, IoPerson } from "react-icons/io5";
-import { MdSearch, MdPeople, MdSettings } from "react-icons/md";
-import {
-	PiGitPullRequest,
-	PiHouse,
-	PiSquaresFourBold,
-	PiTree,
-} from "react-icons/pi";
+import { FaBug, FaStar, FaTv } from "react-icons/fa";
+import { IoPerson, IoPersonCircle } from "react-icons/io5";
+import { MdSearch, MdPeople } from "react-icons/md";
+import { PiCallBellFill, PiHouse } from "react-icons/pi";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BiTachometer } from "react-icons/bi";
 
-function Admin() {
+import image from "../admin.png";
+function HrDashboard() {
 	const sidebar = [
 		{
 			title: "Dashboard",
@@ -29,18 +26,8 @@ function Admin() {
 		},
 		{
 			title: "Requests",
-			icons: <PiGitPullRequest />,
+			icons: <PiCallBellFill />,
 			link: "/request",
-		},
-		{
-			title: "Departements",
-			icons: <PiTree />,
-			link: "/Dep",
-		},
-		{
-			title: "Category",
-			icons: <PiSquaresFourBold />,
-			link: "/Category",
 		},
 	];
 	const rightbar = [
@@ -61,35 +48,10 @@ function Admin() {
 			icons: <IoPerson />,
 		},
 	];
-	const stat = [
-		{
-			title: "Total property",
-			value: 400,
-		},
-		{
-			title: "Available property",
-			value: 300,
-		},
-
-		{
-			title: "Assigned property",
-			value: 350,
-		},
-	];
-	const reqOverview = [
-		{
-			title: "Total pending request",
-			value: 350,
-		},
-		{
-			title: "Resolved request",
-			value: 350,
-		},
-	];
 
 	const [selectedItem, setSelectedItem] = useState(0);
 	return (
-		<div className='admin-dashboard'>
+		<div className='hr-dashboard'>
 			<div className='side-bar'>
 				<span style={{ paddingLeft: "2em" }}> logo </span>
 				<h3 style={{ paddingLeft: "2em" }}> Chain of trust</h3>
@@ -118,52 +80,67 @@ function Admin() {
 						<input placeholder='Search' /> <span> ⌘/ </span>
 					</div>
 					<span>
-						<MdSettings style={{ fontSize: "40px", marginRight: "20px" }} />{" "}
-						<h2> Organization Name </h2>
+						<IoPersonCircle style={{ fontSize: "40px", marginRight: "20px" }} />
+						<h2> User 009 </h2>
 					</span>
 				</div>
 				<div className='body'>
-					<div className='categ'>
-						<h3> Quick stat</h3>
-						<div className='each'>
-							{stat.map((item) => (
-								<div className='listed'>
-									<p> {item.title}</p>
-									<h2>{item.value} </h2>
-								</div>
-							))}
+					<section className='one'>
+						<div className='row1'>
+							<h2>
+								50
+								<span
+									style={{
+										display: "flex",
+										alignItems: "center",
+										fontSize: "20px",
+										fontWeight: "100",
+										width: "9em",
+									}}
+								>
+									<FaStar style={{ marginRight: "10px", fontSize: "40px" }} />{" "}
+									Approved requests
+								</span>
+							</h2>
+							<img src={image} alt='admin' />
 						</div>
-					</div>
-					<div className='categ'>
-						<h3> Request overview</h3>
-						<div className='each'>
-							{reqOverview.map((item) => (
-								<div className='listed'>
-									<p> {item.title}</p>
-									<h2>{item.value} </h2>
-								</div>
-							))}
+						<div className='row2'>
+							<h2> Review Details</h2>
+							<div className='item'>
+								<h1>
+									350
+									<span
+										style={{
+											display: "flex",
+											alignItems: "center",
+											fontSize: "20px",
+											fontWeight: "100",
+											width: "9em",
+										}}
+									>
+										Staff members
+									</span>{" "}
+								</h1>
+								<BiTachometer
+									style={{ marginLeft: "30px", fontSize: "100px" }}
+								/>
+							</div>
 						</div>
-					</div>
-					<Link className='categ' to='/report'>
-						<h3> Report</h3>
-						<div
-							className='each'
+					</section>
+					<section className='two'>
+						<h3> Activities </h3>
+						<ul
 							style={{
-								boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-								width: "7em",
-								marginLeft: "65px",
 								display: "flex",
-								alignItems: "center",
-								fontSize: "18px",
 								flexDirection: "column",
-								padding: "1em 0.5em",
-								borderRadius: "15px",
+								borderBottom: "none",
 							}}
 						>
-							Generate report <IoAnalytics style={{ fontSize: "2em" }} />
-						</div>
-					</Link>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+						</ul>
+					</section>
 				</div>
 			</div>
 			<div className='right-bar'>
@@ -185,18 +162,9 @@ function Admin() {
 						</div>
 					))}
 				</div>
-				<div className='maintenance'>
-					<h3> Maintenance </h3>
-					<p class='pending'>
-						Pending <span>123,459</span>
-					</p>
-					<p class='resolved'>
-						Resolved <span>123,459</span>
-					</p>
-				</div>
 			</div>
 		</div>
 	);
 }
 
-export default Admin;
+export default HrDashboard;

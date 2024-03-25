@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function NavBar() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -36,13 +37,13 @@ function NavBar() {
 			<div>
 				<ul className='menu'>
 					<li>
-						<a href='/'>Home</a>
+						<Link to='/'>Home</Link>
 					</li>
 					<li>
-						<a href='/service'>Services</a>
+						<Link to='/service'>Services</Link>
 					</li>
                     <li>
-						<a href='/about'>About</a>
+						<Link to='/about'>About</Link>
 					</li>
 					{user ? (
 						<div className='dropdown'>

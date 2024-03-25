@@ -15,6 +15,7 @@ import { BsPersonFillGear } from "react-icons/bs";
 
 import image from "./home.jpeg";
 import image2 from "./home2.jpeg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function Home() {
 	const services = [
@@ -73,12 +74,12 @@ function Home() {
 						textinc Lorem Ipsum simply dummy text of the printing and type
 						setting industry. Lorem been industry's standard dummy textinc
 					</p>
-					<a href='/admin'>
+					<Link to='/hrDashboard'>
 						<button>
 							<p>More about us</p>
 							<FaArrowCircleRight style={{ fontSize: "50px" }} />
 						</button>
-					</a>
+					</Link>
 				</div>
 				<div className='part2'>
 					<div className='column1'>

@@ -503,15 +503,14 @@ body {
 	width: auto;
 	color: #000;
 	font: 400 80px Orelega One, sans-serif;
+	margin: 2em 0 2em 1em;
 }
-
 .about-page .goal {
 	color: #000;
 	margin-top: 123px;
 	text-align: center;
 	font: 400 35px Orelega One, sans-serif;
 }
-
 .about-page .goal p {
 	color: #828282;
 	text-align: center;
@@ -627,7 +626,7 @@ body {
 }
 .service .title {
 	width: 10em;
-	margin: 2em 0 0 1em;
+	margin: 2em 0 0 0;
 	text-align: center;
 	color: #000;
 	font: 400 80px Orelega One, sans-serif;
@@ -1849,4 +1848,81 @@ input:focus {
 }
 .catego .content {
 	flex: 7.5;
+}
+/* ////////////////  hr dashboard  ////////// */
+.hr-dashboard {
+	display: flex;
+}
+.hr-dashboard .side-bar {
+	flex: 1.5;
+}
+.hr-dashboard .content {
+	border-right: 2px solid rgb(212, 212, 212);
+	flex: 7;
+}
+.hr-dashboard .content .body {
+	padding: 40px;
+}
+.hr-dashboard .content .body .one{
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+}
+.hr-dashboard .content .body .one .row1{
+	background-color: white;
+	padding: 4em 3em;
+	display: flex;
+	align-items: end;
+	border-radius: 80px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.hr-dashboard .content .body .one .row1 h2{
+	margin-right: 2.5em;
+	font-size: 40px;
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+}
+.hr-dashboard .content .body .one .row1 img{
+	width: 15em;
+	height: 15em;
+}
+.hr-dashboard .right-bar {
+	flex: 1.5;
+	padding: 10px 25px;
+}
+.hr-dashboard .content .body .one .row2{
+	background-color: rgb(255, 245, 243);
+	padding: 4em 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	border-radius: 50px;
+	font-size: 18px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.hr-dashboard .content .body .one .row2 h2{
+	margin: 0;
+	font: 100 20px Orelega One, sans-serif;
+}
+.hr-dashboard .content .body .one .row2 h1{
+	margin: 0;
+	display: flex;
+	font-size: 42px;
+	flex-direction: column;
+}
+.hr-dashboard .content .body .one .row2 .item{
+	display: flex;
+	align-items: center;
+}
+.hr-dashboard .content .body .two {
+	margin: 3em 0 0 3em;
+}
+.hr-dashboard .content .body .two h3{
+	font-size: 25px;
+	margin-bottom: 0;
+}
+.hr-dashboard .content .body .two ul li{
+	margin-bottom: 25px;
+
 }
